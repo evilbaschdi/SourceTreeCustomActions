@@ -1,0 +1,7 @@
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\bin\Debug\net462\SourceTreeCustomActions.exe
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\bin\Debug\net462\SourceTreeCustomActions.pdb
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\obj\Debug\net462\SourceTreeCustomActions.csproj.CoreCompileInputs.cache
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\obj\Debug\net462\SourceTreeCustomActions.AssemblyInfoInputs.cache
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\obj\Debug\net462\SourceTreeCustomActions.AssemblyInfo.cs
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\obj\Debug\net462\SourceTreeCustomActions.exe
+C:\Git\SourceTreeCustomActions\SourceTreeCustomActions\obj\Debug\net462\SourceTreeCustomActions.pdb
