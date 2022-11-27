@@ -1,9 +1,8 @@
 ﻿using EvilBaschdi.Core;
 
-namespace SourceTreeCustomActions.Internal
+namespace SourceTreeCustomActions.Internal;
+
+/// <inheritdoc />
+public interface IStringWrapper : IString
 {
-    /// <inheritdoc />
-    public interface IStringWrapper : IValue<string>
-    {
-    }
 }

@@ -1,25 +1,36 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <Authors>Sebastian Walter</Authors>
-    <Company>evilbaschdi (Sebastian Walter)</Company>
-    <Copyright>Copyright © 2017 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
-    <Description>Provides custom actions to be called from SourceTree</Description>
-    <!-- ReSharper disable once UnknownProperty -->
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\SourceTreeCustomActions.xml</DocumentationFile>
-    <IsPackable>false</IsPackable>
-    <LangVersion>8</LangVersion>
-    <OutputType>Exe</OutputType>
-    <PackageProjectUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</PackageProjectUrl>
-    <PackageTags>SourceTree Custom Actions</PackageTags>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <RepositoryUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</RepositoryUrl>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Title>SourceTreeCustomActions</Title>
-    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="EvilBaschdi.Core" Version="2020.5.3.1518" />
-  </ItemGroup>
+	<PropertyGroup>
+		<Authors>Sebastian Walter</Authors>
+		<Company>evilbaschdi (Sebastian Walter)</Company>
+		<Copyright>Copyright © 2017 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
+		<Description>Provides custom actions to be called from SourceTree</Description>
+		<!-- ReSharper disable once UnknownProperty -->
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\SourceTreeCustomActions.xml</DocumentationFile>
+		<IsPackable>false</IsPackable>
+		<LangVersion>preview</LangVersion>
+		<OutputType>Exe</OutputType>
+		<PackageProjectUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</PackageProjectUrl>
+		<PackageTags>SourceTree Custom Actions</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</RepositoryUrl>
+		<TargetFramework>net7.0</TargetFramework>
+		<Title>SourceTreeCustomActions</Title>
+		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EvilBaschdi.Core" Version="2022.11.8.1753-develop" />
+		<PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>

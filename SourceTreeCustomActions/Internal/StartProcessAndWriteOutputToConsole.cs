@@ -1,23 +1,21 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using JetBrains.Annotations;
 
-namespace SourceTreeCustomActions.Internal
+namespace SourceTreeCustomActions.Internal;
+
+/// <inheritdoc />
+public class StartProcessAndWriteOutputToConsole : IStartProcessAndWriteOutput
 {
     /// <inheritdoc />
-    public class StartProcessAndWriteOutputToConsole : IStartProcessAndWriteOutput
+    public void RunFor([NotNull] Process process)
     {
-        /// <inheritdoc />
-        public void RunFor([NotNull] Process process)
+        if (process == null)
         {
-            if (process == null)
-            {
-                throw new ArgumentNullException(nameof(process));
-            }
-
-            process.Start();
-            Console.WriteLine(process.StartInfo.Arguments + "...");
-            Console.WriteLine(process.StandardOutput.ReadToEnd().Trim());
+            throw new ArgumentNullException(nameof(process));
         }
+
+        process.Start();
+        Console.WriteLine(process.StartInfo.Arguments + "...");
+        Console.WriteLine(process.StandardOutput.ReadToEnd().Trim());
     }
 }

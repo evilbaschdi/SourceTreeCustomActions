@@ -1,53 +1,74 @@
-﻿using System;
-using System.IO;
-using SourceTreeCustomActions.Internal;
+﻿using SourceTreeCustomActions.Internal;
 
-namespace SourceTreeCustomActions
+namespace SourceTreeCustomActions;
+
+// ReSharper disable once ArrangeTypeModifiers
+// ReSharper disable once ClassNeverInstantiated.Global
+class Program
 {
-    class Program
+    private static string _path;
+
+    // ReSharper disable once ArrangeTypeMemberModifiers
+    static void Main(string[] args)
     {
-        private static string _path;
+        var module = args[0];
+        _path = args[1];
 
-        static void Main(string[] args)
+        IStringWrapper path = new PathStringWrapper(args[1]);
+        IProcess git = new GitProcess(path);
+        IStartProcessAndWriteOutput startProcessAndWriteOutput = new StartProcessAndWriteOutputToConsole();
+
+        if (!Directory.Exists(_path))
         {
-            var module = args[0];
-            _path = args[1];
-            var remote1Name = args[2];
-            var remote2Name = args[3];
+            return;
+        }
 
-            IStringWrapper path = new PathStringWrapper(args[1]);
-            IProcess git = new GitProcess(path);
-            IStartProcessAndWriteOutput startProcessAndWriteOutput = new StartProcessAndWriteOutputToConsole();
-
-            if (Directory.Exists(_path))
+        switch (module)
+        {
+            case "sync":
             {
-                if (module == "sync")
+                var remote1Name = args[2];
+                var remote2Name = args[3];
+                var gitRemoteVProcess = git.ValueFor("remote -v");
+
+                gitRemoteVProcess.Start();
+                var gitRemoteVResult = gitRemoteVProcess.StandardOutput.ReadToEnd();
+
+                if (gitRemoteVResult.Contains(remote1Name) && gitRemoteVResult.Contains(remote2Name))
                 {
-                    var gitRemoteV = git.ValueFor("remote -v");
-
-                    gitRemoteV.Start();
-                    var gitRemoteVResult = gitRemoteV.StandardOutput.ReadToEnd();
-
-                    if (gitRemoteVResult.Contains(remote1Name) && gitRemoteVResult.Contains(remote2Name))
-                    {
-                        var gitFetchRemote1Tags = git.ValueFor("fetch " + remote1Name + " --tags");
-                        startProcessAndWriteOutput.RunFor(gitFetchRemote1Tags);
-                        var gitFetchRemote2Tags = git.ValueFor("fetch " + remote2Name + " --tags");
-                        startProcessAndWriteOutput.RunFor(gitFetchRemote2Tags);
-                        var gitPuthRemote1All = git.ValueFor("push " + remote1Name + " --all");
-                        startProcessAndWriteOutput.RunFor(gitPuthRemote1All);
-                        var gitPuthRemote1Tags = git.ValueFor("push " + remote1Name + " --tags");
-                        startProcessAndWriteOutput.RunFor(gitPuthRemote1Tags);
-                        var gitPuthRemote2All = git.ValueFor("push " + remote2Name + " --all");
-                        startProcessAndWriteOutput.RunFor(gitPuthRemote2All);
-                        var gitPuthRemote2Tags = git.ValueFor("push " + remote2Name + " --tags");
-                        startProcessAndWriteOutput.RunFor(gitPuthRemote2Tags);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Nothing to do.");
-                    }
+                    var gitFetchRemote1Tags = git.ValueFor("fetch " + remote1Name + " --tags");
+                    startProcessAndWriteOutput.RunFor(gitFetchRemote1Tags);
+                    var gitFetchRemote2Tags = git.ValueFor("fetch " + remote2Name + " --tags");
+                    startProcessAndWriteOutput.RunFor(gitFetchRemote2Tags);
+                    var gitPushRemote1All = git.ValueFor("push " + remote1Name + " --all");
+                    startProcessAndWriteOutput.RunFor(gitPushRemote1All);
+                    var gitPushRemote1Tags = git.ValueFor("push " + remote1Name + " --tags");
+                    startProcessAndWriteOutput.RunFor(gitPushRemote1Tags);
+                    var gitPushRemote2All = git.ValueFor("push " + remote2Name + " --all");
+                    startProcessAndWriteOutput.RunFor(gitPushRemote2All);
+                    var gitPushRemote2Tags = git.ValueFor("push " + remote2Name + " --tags");
+                    startProcessAndWriteOutput.RunFor(gitPushRemote2Tags);
                 }
+                else
+                {
+                    Console.WriteLine("Nothing to do.");
+                }
+
+                break;
+            }
+            case "pushToAllRemotes":
+            {
+                var gitCurrentBranch = args[2];
+
+                var gitRemotesProcess = git.ValueFor("remote");
+                gitRemotesProcess.Start();
+
+                while (gitRemotesProcess.StandardOutput.ReadLine() is { } remote)
+                {
+                    startProcessAndWriteOutput.RunFor(git.ValueFor($"push {remote} {gitCurrentBranch}"));
+                }
+
+                break;
             }
         }
     }
