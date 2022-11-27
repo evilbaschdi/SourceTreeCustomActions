@@ -10,7 +10,7 @@ To add new Custom Action to SourceTree got to Options \ Custom Actions \ "Add"
   - [x] Show Full Output
   - [x] Run command silently
   - Script to run: *path to compiled .exe*
-  - Parameters: "sync" $REPO "origin" "*Name of another Repo to sync*"
+  - Parameters: "sync" $REPO "origin" "*Name of another Remote to sync*"
 - Push to all Remotes
   - [ ] Open in a separate window
   - [x] Show Full Output
