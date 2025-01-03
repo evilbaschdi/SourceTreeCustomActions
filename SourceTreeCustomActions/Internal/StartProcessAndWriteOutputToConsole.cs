@@ -9,13 +9,10 @@ public class StartProcessAndWriteOutputToConsole : IStartProcessAndWriteOutput
     /// <inheritdoc />
     public void RunFor([NotNull] Process process)
     {
-        if (process == null)
-        {
-            throw new ArgumentNullException(nameof(process));
-        }
+        ArgumentNullException.ThrowIfNull(process);
 
         process.Start();
-        Console.WriteLine(process.StartInfo.Arguments + "...");
+        Console.WriteLine($"{process.StartInfo.Arguments}...");
         Console.WriteLine(process.StandardOutput.ReadToEnd().Trim());
     }
 }

@@ -20,10 +20,7 @@ public class GitProcess : IProcess
     /// <inheritdoc />
     public Process ValueFor([NotNull] string argument)
     {
-        if (argument == null)
-        {
-            throw new ArgumentNullException(nameof(argument));
-        }
+        ArgumentNullException.ThrowIfNull(argument);
 
         return new()
                {

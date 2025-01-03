@@ -15,7 +15,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<PublishSingleFile>true</PublishSingleFile>
 		<RepositoryUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</RepositoryUrl>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<Title>SourceTreeCustomActions</Title>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>

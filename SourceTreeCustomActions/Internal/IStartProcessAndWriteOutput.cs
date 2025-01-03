@@ -4,6 +4,4 @@ using EvilBaschdi.Core;
 namespace SourceTreeCustomActions.Internal;
 
 /// <inheritdoc />
-public interface IStartProcessAndWriteOutput : IRunFor<Process>
-{
-}
+public interface IStartProcessAndWriteOutput : IRunFor<Process>;
