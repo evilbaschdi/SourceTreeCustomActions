@@ -1,4 +1,4 @@
 ﻿namespace SourceTreeCustomActions.Internal;
 
 /// <inheritdoc />
-public interface IStringWrapper : IString;
+public interface IGitCommands : IRunFor<string[]>;

@@ -17,13 +17,21 @@
 		<RepositoryUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</RepositoryUrl>
 		<TargetFramework>net9.0</TargetFramework>
 		<Title>SourceTreeCustomActions</Title>
-		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
+		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.H))</Version>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="EvilBaschdi.Core" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Using Include="EvilBaschdi.Core" />
+	  <Using Include="JetBrains.Annotations" />
+	  <Using Include="SourceTreeCustomActions.Internal" />
+	  <Using Include="System.Diagnostics" />
 	</ItemGroup>
 
 </Project>

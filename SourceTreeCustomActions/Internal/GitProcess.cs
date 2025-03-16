@@ -1,21 +1,10 @@
-﻿using System.Diagnostics;
-using JetBrains.Annotations;
-
-namespace SourceTreeCustomActions.Internal;
+﻿namespace SourceTreeCustomActions.Internal;
 
 /// <inheritdoc />
-public class GitProcess : IProcess
+public class GitProcess(
+    [NotNull] IStringWrapper path) : IProcess
 {
-    private readonly IStringWrapper _path;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="path"></param>
-    public GitProcess([NotNull] IStringWrapper path)
-    {
-        _path = path ?? throw new ArgumentNullException(nameof(path));
-    }
+    private readonly IStringWrapper _path = path ?? throw new ArgumentNullException(nameof(path));
 
     /// <inheritdoc />
     public Process ValueFor([NotNull] string argument)

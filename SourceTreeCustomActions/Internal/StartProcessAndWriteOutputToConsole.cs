@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using JetBrains.Annotations;
-
-namespace SourceTreeCustomActions.Internal;
+﻿namespace SourceTreeCustomActions.Internal;
 
 /// <inheritdoc />
 public class StartProcessAndWriteOutputToConsole : IStartProcessAndWriteOutput
