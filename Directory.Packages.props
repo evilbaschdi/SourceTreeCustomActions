@@ -4,6 +4,6 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2024.10.31.739" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2025.5.11.19" />
   </ItemGroup>
 </Project>
