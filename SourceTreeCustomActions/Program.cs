@@ -11,31 +11,29 @@ if (!Directory.Exists(path))
     return;
 }
 
+var gitCurrentBranch = args[2];
+var gitRemotesProcess = git.ValueFor("remote");
+gitRemotesProcess.Start();
+var remotes = new List<string>();
+while (gitRemotesProcess.StandardOutput.ReadLine() is { } remote)
+{
+    remotes.Add(remote);
+}
+
 switch (module)
 {
     case "sync":
     {
-        var remote1Name = args[2];
-        var remote2Name = args[3];
-        var gitRemoteVProcess = git.ValueFor("remote -v");
-
-        gitRemoteVProcess.Start();
-        var gitRemoteVResult = gitRemoteVProcess.StandardOutput.ReadToEnd();
-
-        if (gitRemoteVResult.Contains(remote1Name) && gitRemoteVResult.Contains(remote2Name))
+        //pull from all remotes
+        foreach (var remote in remotes)
         {
-            gitCommands.RunFor(
-                $"fetch {remote1Name} --tags",
-                $"fetch {remote2Name} --tags",
-                $"push {remote1Name} --all",
-                $"push {remote1Name} --tags",
-                $"push {remote2Name} --all",
-                $"push {remote2Name} --tags"
-            );
+            gitCommands.RunFor(($"pull {remote} {gitCurrentBranch}"));
         }
-        else
+
+        //push to all remotes
+        foreach (var remote in remotes)
         {
-            Console.WriteLine("Nothing to do.");
+            gitCommands.RunFor(($"push {remote} {gitCurrentBranch}"));
         }
 
         break;
@@ -43,13 +41,9 @@ switch (module)
     case "pushToAllRemotes":
     case "pullAllRemotes":
     {
-        var gitCurrentBranch = args[2];
-        var gitRemotesProcess = git.ValueFor("remote");
-        gitRemotesProcess.Start();
-
         var command = module == "pushToAllRemotes" ? "push" : "pull";
 
-        while (gitRemotesProcess.StandardOutput.ReadLine() is { } remote)
+        foreach (var remote in remotes)
         {
             gitCommands.RunFor(($"{command} {remote} {gitCurrentBranch}"));
         }

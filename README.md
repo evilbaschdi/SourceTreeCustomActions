@@ -13,7 +13,7 @@ To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom A
   - [x] Show Full Output
   - [x] Run command silently
   - Script to run: *path to compiled .exe*
-  - Parameters: `"sync" $REPO "origin" "*Name of another Remote to sync*"`
+  - Parameters: `"sync" $REPO $BRANCH`
 - **Pull all Remotes**
   - [ ] Open in a separate window
   - [x] Show Full Output
@@ -32,9 +32,9 @@ To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom A
 To manage `Custom Actions` in `SourceGit`, go to `Preferences` (Ctrl+,) > `Custom Actions`
 
 - **Sync Git Remotes**
-  - Scope: `Repository`
+  - Scope: `Branch`
   - Executable File: *path to compiled .exe*
-  - Arguments: `"sync" ${REPO} "origin" "*Name of another Remote to sync*"`
+  - Arguments: `"sync" ${REPO} $BRANCH`
 - **Pull all Remotes**
   - Scope: `Branch`
   - Executable File: *path to compiled .exe*
