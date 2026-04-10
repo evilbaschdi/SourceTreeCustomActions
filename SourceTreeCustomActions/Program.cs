@@ -32,9 +32,11 @@ switch (module)
         }
 
         //push to all remotes
-        foreach (var remote in remotes)
+        foreach (var gitCommand in remotes
+                     .Select(remote
+                                 => $"push -u {remote} {gitCurrentBranch}"))
         {
-            gitCommands.RunFor(($"push {remote} {gitCurrentBranch}"));
+            gitCommands.RunFor((gitCommand));
         }
 
         break;
@@ -44,12 +46,12 @@ switch (module)
     {
         var command = module == "pushToAllRemotes" ? "push" : "pull";
 
-        foreach (var remote in remotes)
+        foreach (var gitCommand in remotes
+                     .Select(remote
+                                 => command == "push"
+                                     ? $"{command} -u {remote} {gitCurrentBranch}"
+                                     : $"{command} {remote} {gitCurrentBranch}"))
         {
-            var gitCommand = command == "push"
-                ? $"{command} -u {remote} {gitCurrentBranch}"
-                : $"{command} {remote} {gitCurrentBranch}";
-            
             gitCommands.RunFor((gitCommand));
         }
 
