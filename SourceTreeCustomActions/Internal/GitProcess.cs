@@ -1,4 +1,4 @@
-﻿namespace SourceTreeCustomActions.Internal;
+namespace SourceTreeCustomActions.Internal;
 
 /// <inheritdoc />
 public class GitProcess(
@@ -12,16 +12,17 @@ public class GitProcess(
         ArgumentNullException.ThrowIfNull(argument);
 
         return new()
-               {
-                   StartInfo = new()
-                               {
-                                   FileName = "git",
-                                   Arguments = argument,
-                                   WorkingDirectory = _path.Value,
-                                   UseShellExecute = false,
-                                   RedirectStandardOutput = true,
-                                   CreateNoWindow = true
-                               }
-               };
+                {
+                    StartInfo = new()
+                                {
+                                    FileName = "git",
+                                    Arguments = argument,
+                                    WorkingDirectory = _path.Value,
+                                    UseShellExecute = false,
+                                    RedirectStandardOutput = true,
+                                    RedirectStandardError = true,
+                                    CreateNoWindow = true
+                                }
+                };
     }
 }

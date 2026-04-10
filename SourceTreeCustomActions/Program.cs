@@ -15,6 +15,7 @@ var gitCurrentBranch = args[2];
 var gitRemotesProcess = git.ValueFor("remote");
 gitRemotesProcess.Start();
 var remotes = new List<string>();
+
 while (gitRemotesProcess.StandardOutput.ReadLine() is { } remote)
 {
     remotes.Add(remote);
@@ -45,7 +46,11 @@ switch (module)
 
         foreach (var remote in remotes)
         {
-            gitCommands.RunFor(($"{command} {remote} {gitCurrentBranch}"));
+            var gitCommand = command == "push"
+                ? $"{command} -u {remote} {gitCurrentBranch}"
+                : $"{command} {remote} {gitCurrentBranch}";
+            
+            gitCommands.RunFor((gitCommand));
         }
 
         break;

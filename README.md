@@ -1,11 +1,11 @@
 # SourceTreeCustomActions
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 Provides `Custom Actions` for [SourceTree](https://www.sourcetreeapp.com) or [SourceGit](https://sourcegit-scm.github.io/), or any other Git GUI client supporting `Custom Actions`.
 
-NuGet Package MyGet Feed: <https://www.myget.org/F/evilbaschdi/api/v3/index.json> (already included in `NuGet.config`)
 
 ## SourceTree
-
 To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom Actions`
 
 - **Sync Git Remotes**
@@ -28,7 +28,6 @@ To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom A
   - Parameters: `"pushToAllRemotes" $REPO $BRANCH`
 
 ## SourceGit
-
 To manage `Custom Actions` in `SourceGit`, go to `Preferences` (Ctrl+,) > `Custom Actions`
 
 - **Sync Git Remotes**
@@ -44,4 +43,17 @@ To manage `Custom Actions` in `SourceGit`, go to `Preferences` (Ctrl+,) > `Custo
   - Executable File: *path to compiled .exe*
   - Arguments: `"pushToAllRemotes" ${REPO} ${BRANCH}`
 
-[![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/badge/main)](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/overview/main)
+[![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/badge/main?style=for-the-badge)](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/overview/main)
+
+## Package Feeds
+
+Default by NuGet.config is myget.org
+
+|                                | Feed Url                                                         |
+| :----------------------------- | :--------------------------------------------------------------- |
+| ![myget.org][myGetBadge]       | <https://www.myget.org/F/evilbaschdi/api/v3/index.json>          |
+| ![codeberg.org][codebergBadge] | <https://codeberg.org/api/packages/evilbaschdi/nuget/index.json> |
+
+
+[myGetBadge]: https://img.shields.io/badge/MyGet.org-gray?style=for-the-badge&logo=myget
+[codebergBadge]: https://img.shields.io/badge/Codeberg-gray?style=for-the-badge&logo=codeberg

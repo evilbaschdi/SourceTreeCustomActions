@@ -10,6 +10,17 @@ public class StartProcessAndWriteOutputToConsole : IStartProcessAndWriteOutput
 
         process.Start();
         Console.WriteLine($"{process.StartInfo.Arguments}...");
-        Console.WriteLine(process.StandardOutput.ReadToEnd().Trim());
+        var output = process.StandardOutput.ReadToEnd().Trim();
+        var error = process.StandardError.ReadToEnd().Trim();
+        
+        if (!string.IsNullOrEmpty(output))
+        {
+            Console.WriteLine(output);
+        }
+        
+        if (!string.IsNullOrEmpty(error))
+        {
+            Console.WriteLine(error);
+        }
     }
 }
