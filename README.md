@@ -1,7 +1,7 @@
 # SourceTreeCustomActions
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE) [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/badge/main?style=for-the-badge)](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/overview/main)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 Provides `Custom Actions` for [SourceTree](https://www.sourcetreeapp.com) or [SourceGit](https://sourcegit-scm.github.io/), or any other Git GUI client supporting `Custom Actions`.
 
 
@@ -43,7 +43,7 @@ To manage `Custom Actions` in `SourceGit`, go to `Preferences` (Ctrl+,) > `Custo
   - Executable File: *path to compiled .exe*
   - Arguments: `"pushToAllRemotes" ${REPO} ${BRANCH}`
 
-[![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/badge/main?style=for-the-badge)](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/overview/main)
+
 
 ## Package Feeds
 
