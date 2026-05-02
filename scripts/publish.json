@@ -1,5 +1,5 @@
 {
-    "pipelineName": "SourceTreeCustomActions Toolbox",
+    "pipelineName": "SourceTreeCustomActions",
     "profiles": [
         {
             "project": "SourceTreeCustomActions",
