@@ -9,7 +9,7 @@
             "command": "dotnet",
             "args": [
                 "build",
-                "${workspaceRoot}/SourceTreeCustomActions.csproj"
+                "${workspaceRoot}/GitClientCustomActions.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {

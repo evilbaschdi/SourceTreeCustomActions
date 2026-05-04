@@ -1,8 +1,8 @@
 {
-    "pipelineName": "SourceTreeCustomActions",
+    "pipelineName": "GitClientCustomActions",
     "profiles": [
         {
-            "project": "SourceTreeCustomActions",
+            "project": "GitClientCustomActions",
             "runtimes": [
                 "win-x64",
                 "win-arm64"

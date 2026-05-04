@@ -2,15 +2,15 @@
     "profiles": {
         "sync": {
             "commandName": "Project",
-            "commandLineArgs": "sync C:\\Git\\SourceTreeCustomActions develop"
+            "commandLineArgs": "sync C:\\Git\\GitClientCustomActions develop"
           },
         "pullAllRemotes": {
             "commandName": "Project",
-            "commandLineArgs": "pullAllRemotes C:\\Git\\SourceTreeCustomActions develop"
+            "commandLineArgs": "pullAllRemotes C:\\Git\\GitClientCustomActions develop"
           },
         "pushToAllRemotes": {
             "commandName": "Project",
-            "commandLineArgs": "pushToAllRemotes C:\\Git\\SourceTreeCustomActions develop"
+            "commandLineArgs": "pushToAllRemotes C:\\Git\\GitClientCustomActions develop"
           }
       }
   }

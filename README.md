@@ -1,6 +1,6 @@
-# SourceTreeCustomActions
+# GitClientCustomActions
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE) [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/badge/main?style=for-the-badge)](https://www.codefactor.io/repository/github/evilbaschdi/SourceTreeCustomActions/overview/main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE) [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/badge/main?style=for-the-badge)](https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/overview/main)
 
 Provides `Custom Actions` for [SourceTree](https://www.sourcetreeapp.com) or [SourceGit](https://sourcegit-scm.github.io/), or any other Git GUI client supporting `Custom Actions`.
 

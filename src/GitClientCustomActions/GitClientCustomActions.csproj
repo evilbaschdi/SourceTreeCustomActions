@@ -4,19 +4,19 @@
 		<Authors>Sebastian Walter</Authors>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
 		<Copyright>Copyright © 2017 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
-		<Description>Provides custom actions to be called from SourceTree</Description>
+		<Description>Provides custom actions for git clients (e.g. SourceTree, GitFork, etc.)</Description>
 		<!-- ReSharper disable once UnknownProperty -->
-		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\SourceTreeCustomActions.xml</DocumentationFile>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\GitClientCustomActions.xml</DocumentationFile>
 		<IsPackable>false</IsPackable>
 		<LangVersion>preview</LangVersion>
 		<OutputType>Exe</OutputType>
-		<PackageProjectUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</PackageProjectUrl>
-		<PackageTags>SourceTree Custom Actions</PackageTags>
+		<PackageProjectUrl>https://github.com/evilbaschdi/GitClientCustomActions</PackageProjectUrl>
+		<PackageTags>Git Client Custom Actions</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<PublishSingleFile>true</PublishSingleFile>
-		<RepositoryUrl>https://github.com/evilbaschdi/SourceTreeCustomActions</RepositoryUrl>
+		<RepositoryUrl>https://github.com/evilbaschdi/GitClientCustomActions</RepositoryUrl>
 		<TargetFramework>net10.0</TargetFramework>
-		<Title>SourceTreeCustomActions</Title>
+		<Title>GitClientCustomActions</Title>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.H))</Version>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -30,7 +30,7 @@
 	<ItemGroup>
 	  <Using Include="EvilBaschdi.Core" />
 	  <Using Include="JetBrains.Annotations" />
-	  <Using Include="SourceTreeCustomActions.Internal" />
+	  <Using Include="GitClientCustomActions.Internal" />
 	  <Using Include="System.Diagnostics" />
 	</ItemGroup>
 

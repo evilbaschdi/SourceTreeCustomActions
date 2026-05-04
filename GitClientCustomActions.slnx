@@ -8,6 +8,6 @@
     <File Path="scripts/publish.ps1" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/SourceTreeCustomActions/SourceTreeCustomActions.csproj" />
+    <Project Path="src/GitClientCustomActions/GitClientCustomActions.csproj" />
   </Folder>
 </Solution>

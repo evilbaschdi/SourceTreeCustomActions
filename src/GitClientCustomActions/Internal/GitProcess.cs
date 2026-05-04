@@ -1,4 +1,4 @@
-namespace SourceTreeCustomActions.Internal;
+namespace GitClientCustomActions.Internal;
 
 /// <inheritdoc />
 public class GitProcess(IStringWrapper path) : IProcess
