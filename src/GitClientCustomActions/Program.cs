@@ -1,4 +1,4 @@
-﻿var module = args[0];
+var module = args[0];
 var path = args[1];
 
 var pathStringWrapper = new PathStringWrapper(path);
