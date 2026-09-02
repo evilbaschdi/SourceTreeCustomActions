@@ -4,8 +4,8 @@
 
 Provides `Custom Actions` for [SourceTree](https://www.sourcetreeapp.com) or [SourceGit](https://sourcegit-scm.github.io/), or any other Git GUI client supporting `Custom Actions`.
 
-
 ## SourceTree
+
 To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom Actions`
 
 - **Sync Git Remotes**
@@ -28,6 +28,7 @@ To manage `Custom Actions` in `SourceTree`, go to `Options` (Ctrl+,) > `Custom A
   - Parameters: `"pushToAllRemotes" $REPO $BRANCH`
 
 ## SourceGit
+
 To manage `Custom Actions` in `SourceGit`, go to `Preferences` (Ctrl+,) > `Custom Actions`
 
 - **Sync Git Remotes**
@@ -64,12 +65,12 @@ Default by `NuGet.config` is myget.org
 [mainBranchBadge]: https://img.shields.io/badge/branch-main-brightgreen?style=for-the-badge&logo=git&logoColor=white&color=c9ff00
 [developBranchBadge]: https://img.shields.io/badge/branch-develop-blue?style=for-the-badge&logo=git&logoColor=white&color=0080ff
 
-[codeFactorMainBadge]: https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/badge/main?style=for-the-badge
-[codeFactorMainOverview]: https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/overview/main
-[commitActivityMainBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/GitClientCustomActions/main?style=for-the-badge
-[lastCommitMainBadge]: https://img.shields.io/github/last-commit/evilbaschdi/GitClientCustomActions/main?style=for-the-badge
+[codeFactorMainBadge]: https://www.codefactor.io/repository/github/swalterlabs/GitClientCustomActions/badge/main?style=for-the-badge
+[codeFactorMainOverview]: https://www.codefactor.io/repository/github/swalterlabs/GitClientCustomActions/overview/main
+[commitActivityMainBadge]: https://img.shields.io/github/commit-activity/m/swalterlabs/GitClientCustomActions/main?style=for-the-badge
+[lastCommitMainBadge]: https://img.shields.io/github/last-commit/swalterlabs/GitClientCustomActions/main?style=for-the-badge
 
-[codeFactorDevelopBadge]: https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/badge/develop?style=for-the-badge
-[codeFactorDevelopOverview]: https://www.codefactor.io/repository/github/evilbaschdi/GitClientCustomActions/overview/develop
-[commitActivityDevelopBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/GitClientCustomActions/develop?style=for-the-badge
-[lastCommitDevelopBadge]: https://img.shields.io/github/last-commit/evilbaschdi/GitClientCustomActions/develop?style=for-the-badge
+[codeFactorDevelopBadge]: https://www.codefactor.io/repository/github/swalterlabs/GitClientCustomActions/badge/develop?style=for-the-badge
+[codeFactorDevelopOverview]: https://www.codefactor.io/repository/github/swalterlabs/GitClientCustomActions/overview/develop
+[commitActivityDevelopBadge]: https://img.shields.io/github/commit-activity/m/swalterlabs/GitClientCustomActions/develop?style=for-the-badge
+[lastCommitDevelopBadge]: https://img.shields.io/github/last-commit/swalterlabs/GitClientCustomActions/develop?style=for-the-badge
